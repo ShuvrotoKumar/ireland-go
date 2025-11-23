@@ -1,92 +1,91 @@
-# Service Provider Dashboard
+# Copywright Web Dashboard
 
-A modern React (Vite) dashboard for managing users, chat, notifications, and analytics. Built with React 18, React Router, Tailwind CSS v4, Ant Design v5, and Recharts.
+A modern React (Vite) dashboard for Copywright service providers to manage users, admins, payments, notifications, settings, and reports. Built with React 18, React Router, Tailwind CSS v4, and Ant Design v5.
 
 ## Tech Stack
+
 - **Build Tool**: Vite 6
 - **UI Library**: React 18, React Router 7
-- **Styling**: Tailwind CSS 4 (with `@tailwindcss/vite`), arbitrary colors enabled
+- **Styling**: Tailwind CSS 4 (with `@tailwindcss/vite`)
 - **Components**: Ant Design 5
-- **Charts**: Recharts
 - **Icons**: react-icons
-- **Rich Text**: react-quill
-
-## Getting Started
-
-### Prerequisites
-- Node.js 18+ (recommended LTS)
-- npm 9+ or pnpm/yarn (examples below use npm)
-
-### Install
-```bash
-npm install
-```
-
-### Development
-```bash
-npm run dev
-```
-- Starts Vite dev server with fast HMR.
-- App will be available at the URL printed by Vite (e.g., http://localhost:5173).
-
-### Lint
-```bash
-npm run lint
-```
-- Runs ESLint (React, hooks, refresh plugins configured).
-
-### Build
-```bash
-npm run build
-```
-- Produces a production build in `dist/`.
-
-### Preview (serve production build locally)
-```bash
-npm run preview
-```
 
 ## Project Structure (high level)
+
 ```
-Izz_Dashboard/
+copywright-web-dashboard/
 ├─ src/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ layout/
+│  │  └─ MainLayout.jsx
 │  ├─ pages/
-│  │  ├─ Chat/Chat.jsx
-│  │  ├─ Notifications/Notifications.jsx
-│  │  ├─ Reports/Reports.jsx
+│  │  ├─ Add Admin/
+│  │  │  └─ AddAdmin.jsx
+│  │  ├─ Create Admin/
+│  │  │  └─ CreateAdmin.jsx
+│  │  ├─ Notifications/
+│  │  │  └─ Notifications.jsx
+│  │  ├─ Privacy Policy/
+│  │  │  └─ PrivacyPolicy.jsx
+│  │  ├─ Reports/
+│  │  │  └─ Reports.jsx
+│  │  ├─ Settings/
+│  │  │  └─ Settings.jsx
+│  │  ├─ Terms Condition/
+│  │  │  └─ TermsCondition.jsx
 │  │  ├─ dashboard/
-│  │  │  ├─ DashboardPage.jsx
-│  │  │  ├─ RecentUsers.jsx
-│  │  │  └─ TotalView.jsx
-│  │  ├─ userDetails/UserDetails.jsx
-│  │  └─ auth/ (SignInPage.jsx, ForgetPassword.jsx, VerificationCode.jsx, ResetPassword.jsx)
+│  │  │  └─ DashboardPage.jsx
+│  │  ├─ paymentManagement/
+│  │  │  └─ PaymentManagement.jsx
+│  │  ├─ profile/
+│  │  │  ├─ ProfilePage.jsx
+│  │  │  ├─ ChangePass.jsx
+│  │  │  └─ EditProfile.jsx
+│  │  ├─ userDetails/
+│  │  │  ├─ UserDetails.jsx
+│  │  │  └─ CreateUser.jsx
+│  │  ├─ optional/
+│  │  │  └─ AboutUs.jsx
+│  │  └─ auth/
+│  │     ├─ SignInPage.jsx
+│  │     ├─ ForgetPassword.jsx
+│  │     ├─ VerificationCode.jsx
+│  │     └─ ResetPassword.jsx
 │  ├─ routes/Routes.jsx
-│  └─ shared/
-│     ├─ Sidebar/Sidebar.jsx
-│     └─ MainHeader/MainHeader.jsx
+│  ├─ index.css
+│  └─ main.jsx
 ├─ package.json
+├─ vite.config.js
+├─ vercel.json
 └─ README.md
 ```
 
 ## Features
-- **Chat**: Responsive chat UI with typing indicator and attachments (`src/pages/Chat/Chat.jsx`).
-- **Notifications**: List with read/unread state, AntD theming (`src/pages/Notifications/Notifications.jsx`).
-- **Dashboard**: Key metrics, charts with Recharts (`src/pages/dashboard`).
-- **User Management**: Filter/search, block modal, view modal (`src/pages/userDetails/UserDetails.jsx`).
-- **Auth Screens**: Sign in, reset, verification flows (`src/pages/auth/`).
+
+- **Authentication**: Sign in, password reset and verification flows (`src/pages/auth`).
+- **Dashboard**: Overview metrics and widgets (`src/pages/dashboard/DashboardPage.jsx`).
+- **User Management**: Create and manage users (`src/pages/userDetails`).
+- **Admin Management**: Create and add admins (`src/pages/Create Admin`, `src/pages/Add Admin`).
+- **Payments**: Manage payments and billing (`src/pages/paymentManagement/PaymentManagement.jsx`).
+- **Notifications**: View and manage notifications (`src/pages/Notifications/Notifications.jsx`).
+- **Profile**: View and edit profile, change password (`src/pages/profile`).
+- **Settings**: Application-level settings (`src/pages/Settings/Settings.jsx`).
+- **Legal**: Privacy Policy and Terms & Conditions pages.
 
 ## Theming
-- Primary brand color: `#111827` (applied across pages via Tailwind arbitrary classes like `bg-[#111827]`).
-- With Tailwind v4, arbitrary color utilities are supported. If you prefer semantic class names:
-  - Create CSS variables in a global stylesheet and reference them via Tailwind’s CSS variables.
-  - Or configure a Tailwind plugin/theme (when migrating to a custom config).
-- Ant Design theming: components are themed via `ConfigProvider` `theme.components` entries in each page.
+
+- Tailwind CSS v4 imported via `@import "tailwindcss";` in `src/index.css`.
+- You can use arbitrary color utilities (e.g., `bg-[#111827]`).
+- Ant Design theming can be applied via `ConfigProvider` where needed.
 
 ## Routing
+
 - Routes are defined in `src/routes/Routes.jsx` using React Router 7.
-- Update or add routes there when adding new pages.
+- Current routes include: `/` (Dashboard), `/sign-in`, `/user-details`, `/create-user`, `/payment-management`, `/notifications`, `/reports`, `/settings`, `/profile`, `/edit-profile`, `/change-password`, `/privacy-policy`, `/terms-and-condition`, `/about-us`, `/create-admin`, `/add-admin`.
 
 ## Development Guidelines
+
 - **Components**: Keep components page-scoped under `src/pages/...` and shared UI under `src/shared/...`.
 - **Styling**: Prefer Tailwind utility classes. Use arbitrary values for brand color: `[#111827]`.
 - **State**: Use React hooks; no global store at present.
@@ -94,24 +93,29 @@ Izz_Dashboard/
 - **Commits**: Use clear, descriptive messages (e.g., `feat:`, `fix:`, `chore:`).
 
 ## Environment Variables
+
 - None required for local development.
-- If you add APIs, do not hardcode keys. Use environment files and Vite’s `import.meta.env`.
+- If you add APIs, avoid hardcoding secrets. Use `.env` files and access via Vite’s `import.meta.env`.
 
 ## Build & Deploy
+
 - Build with `npm run build`.
 - Serve `dist/` with any static hosting (Netlify, Vercel, Nginx).
-- For SPA routing on static hosts, ensure 404s redirect to `index.html`.
+- SPA routing: `vercel.json` includes a rewrite to `/` for client-side routing.
 
 ## Troubleshooting
+
 - **Windows line endings**: Git may warn about LF/CRLF conversions. Configure Git as needed:
   ```bash
   git config core.autocrlf true   # checkout CRLF on Windows, commit LF
   ```
-- **Tailwind arbitrary colors not applied**: Ensure dev server restarted after changes; verify classes like `bg-[#111827]` are present in built CSS.
-- **AntD styles**: Make sure `ConfigProvider` wraps components that need theming.
+- **Tailwind styles**: Restart dev server after config changes; ensure classes like `bg-[#111827]` appear in built CSS when used.
+- **AntD styles**: Ensure `ConfigProvider` wraps components that need theming.
 
 ## License
+
 MIT
 
 ## Acknowledgements
+
 - React, Vite, Tailwind CSS, Ant Design, Recharts, React Router, React Icons, React Quill.

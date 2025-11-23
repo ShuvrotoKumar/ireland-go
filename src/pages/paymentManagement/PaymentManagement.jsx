@@ -182,7 +182,7 @@ export default function PaymentManagement() {
                         >
                             <Select
                                 placeholder="Filter by status"
-                                className="w-full md:w-48"
+                                className="w-full md:w-48 size-22"
                                 size="large"
                                 value={statusFilter}
                                 onChange={setStatusFilter}
