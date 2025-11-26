@@ -4,7 +4,6 @@ import { IoSearch, IoChevronBack } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { BiMessage } from "react-icons/bi";
-import { LuMessageSquareText } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
 function Reports() {
@@ -166,11 +165,7 @@ function Reports() {
       key: "action",
       render: (_, record) => (
         <div className="flex gap-2">
-          <button className="" onClick={() => navigate("/chat")}>
-            <LuMessageSquareText className=" w-10 h-10 cursor-pointer rounded-md" />
-          </button>
-
-          <button className="" onClick={() => showViewModal(record)}>
+<button className="" onClick={() => showViewModal(record)}>
             <FaRegEye className="text-[#111827] w-10 h-10 cursor-pointer rounded-md" />
           </button>
           <button className="" onClick={() => showModal(record)}>
@@ -240,7 +235,7 @@ function Reports() {
             <div className="text-center py-5 w-full">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="bg-[#111827] text-white font-semibold w-1/3 py-3 px-5 rounded-lg"
+                className="bg-red-500 hover:bg-red-600 text-white font-semibold w-1/3 py-3 px-5 rounded-lg transition-colors"
               >
                 CONFIRM
               </button>

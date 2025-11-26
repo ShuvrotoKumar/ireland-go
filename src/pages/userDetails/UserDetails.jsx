@@ -266,13 +266,13 @@ function UserDetails() {
             <div className="text-center py-5 w-full flex justify-center gap-3">
               <button
                 onClick={handleCancel}
-                className="bg-gray-500 text-white font-semibold py-3 px-5 rounded-lg"
+                className="bg-gray-800 text-white font-semibold py-3 px-5 rounded-lg"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmBlock}
-                className="bg-[#111827] text-white font-semibold py-3 px-5 rounded-lg"
+                className="bg-red-600 text-white font-semibold py-3 px-5 rounded-lg"
               >
                 Block
               </button>
@@ -292,7 +292,7 @@ function UserDetails() {
           {selectedUser && (
             <div className="relative">
               {/* Header with green gradient */}
-              <div className="bg-gradient-to-r from-[#111827] to-[#111827] p-6 -m-6 mb-6 rounded-t-lg">
+              <div className="bg-blue-600 p-6 -m-6 mb-6 rounded-t-lg">
                 <div className="flex items-center gap-6">
                   <div className="relative">
                     <img
@@ -343,7 +343,7 @@ function UserDetails() {
               <div className="flex justify-end items-center mt-8 pt-6 border-t border-gray-200">
                 <button
                   onClick={handleViewCancel}
-                  className="bg-gray-500 text-white font-semibold px-8 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                  className="bg-blue-600 text-white font-semibold px-8 py-2 rounded-lg hover:bg-gray-600 transition-colors"
                 >
                   Close
                 </button>
