@@ -87,14 +87,14 @@ const RecentUsers = () => {
         theme={{
           components: {
             InputNumber: {
-              activeBorderColor: "#962ebf",
+              activeBorderColor: "blue-600",
             },
 
             Table: {
-              headerBg: "#962ebf",
-              headerColor: "rgb(255,255,255)",
+              headerBg: "blue-600",
+              headerColor: "blue-600",
               cellFontSize: 16,
-              headerSplitColor: "#962ebf",
+              headerSplitColor: "blue-600",
             },
           },
         }}

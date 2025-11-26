@@ -23,32 +23,32 @@ export default function CreateUser() {
 
   return (
     <div className="p-5">
-      <div className="bg-[#962ebf] text-[#962ebf] px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap items-start md:items-center gap-2 md:gap-3">
+      <div className="bg-blue-600 text-blue-600 px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap items-start md:items-center gap-2 md:gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="text-[#962ebf] hover:opacity-90 transition"
+          className="text-blue-600 hover:opacity-90 transition"
           aria-label="Go back"
         >
           <IoChevronBack className="w-6 h-6" />
         </button>
-        <h1 className="text-[#962ebf] text-xl sm:text-2xl font-bold">Create User</h1>
+        <h1 className="text-blue-600 text-xl sm:text-2xl font-bold">Create User</h1>
       </div>
 
-      <form onSubmit={save} className="bg-[#962ebf] text-white rounded-md shadow border border-gray-200 p-5">
+      <form onSubmit={save} className="bg-blue-600 text-white rounded-md shadow border border-gray-200 p-5">
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <label className="block bg-[#962ebf] text-[#962ebf] font-semibold text-gray-700 mb-1">Full Name</label>
+            <label className="block bg-blue-600 text-blue-600 font-semibold text-gray-700 mb-1">Full Name</label>
             <input
               type="text"
               value={form.fullName}
               onChange={(e) => setForm({ ...form, fullName: e.target.value })}
               placeholder="John Doe"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#962ebf]"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           <div>
-            <label className="block text-[#962ebf] font-semibold text-gray-700 mb-1">Role</label>
+            <label className="block text-blue-600 font-semibold text-gray-700 mb-1">Role</label>
             <Select
               className="w-full"
               placeholder="Select role"
@@ -67,40 +67,40 @@ export default function CreateUser() {
           </div>
 
           <div>
-            <label className="block text-[#962ebf] font-semibold text-gray-700 mb-1">Clinic</label>
+            <label className="block text-blue-600 font-semibold text-gray-700 mb-1">Clinic</label>
             <input
               type="text"
               value={form.clinic}
               onChange={(e) => setForm({ ...form, clinic: e.target.value })}
               placeholder="Downtown Dental Clinic"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#962ebf]"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           <div>
-            <label className="block text-[#962ebf] font-semibold text-gray-700 mb-1">Email</label>
+            <label className="block text-blue-600 font-semibold text-gray-700 mb-1">Email</label>
             <input
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="john@example.com"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#962ebf]"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           <div>
-            <label className="block text-[#962ebf] font-semibold text-gray-700 mb-1">Phone No</label>
+            <label className="block text-blue-600 font-semibold text-gray-700 mb-1">Phone No</label>
             <input
               type="text"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               placeholder="+1 987 654 3210"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#962ebf]"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           <div>
-            <label className="block text-[#962ebf] font-semibold text-gray-700 mb-1">Joined Date</label>
+            <label className="block text-blue-600 font-semibold text-gray-700 mb-1">Joined Date</label>
             <input
               type="date"
               value={form.joined}
@@ -110,7 +110,7 @@ export default function CreateUser() {
           </div>
 
           <div className="pt-2">
-            <button type="submit" className="w-full bg-[#962ebf] text-white font-semibold py-3 rounded-md">
+            <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md">
               Create User
             </button>
           </div>

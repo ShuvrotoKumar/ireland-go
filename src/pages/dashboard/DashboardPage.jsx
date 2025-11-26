@@ -21,72 +21,73 @@ function DashboardPage() {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="grid grid-cols-2 md:grid-cols-4 whitespace-nowrap h-[100px] rounded-xl">
-        <div className="relative flex flex-col justify-center items-center p-3 bg-[#F2F2F2] gap-1">
-          <p className="text-[#962ebf] text-2xl font-bold mr-10">200K</p>
-          <p className="text-xl text-[#962ebf] font-semibold">Total User</p>
-          {/* Desktop/tablet right divider */}
-          <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-[#962ebf]" />
-        </div>
-        <div className="relative flex flex-col justify-center items-center p-3 bg-[#F2F2F2] gap-1">
-          <p className="text-[#962ebf] text-2xl font-bold mr-10">1200</p>
-          <p className="text-xl text-[#962ebf] font-semibold">Venue Listed</p>
-          {/* Desktop/tablet right divider */}
-          <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-[#962ebf]" />
-        </div>
-        <div className="relative flex flex-col justify-center items-center p-3 bg-[#F2F2F2] gap-1">
-          <p className="text-[#962ebf] text-2xl font-bold mr-10">1200</p>
-          <p className="text-xl text-[#962ebf] font-semibold">Venue Booked</p>
-          {/* Desktop/tablet right divider */}
-          <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-[#962ebf]" />
-        </div>
-        <div className="flex flex-col justify-center items-center p-3 bg-[#F2F2F2] gap-1">
-          <p className="text-[#962ebf] text-2xl font-bold mr-10">$120K</p>
-          <p className="text-xl text-[#962ebf] font-semibold">Total Revenue</p>
-        </div>
+    <div className="flex flex-col space-y-5 p-4 md:p-6">
+      {/* Stats Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        {[
+          { value: '200K', label: 'Total User' },
+          { value: '1200', label: 'Venue Listed' },
+          { value: '1200', label: 'Venue Booked' },
+          { value: '$120K', label: 'Total Revenue' }
+        ].map((stat, index, array) => (
+          <div 
+            key={stat.label}
+            className={`bg-[#F2F2F2] p-4 rounded-lg flex flex-col items-center justify-center min-h-[120px] ${
+              index < array.length - 1 ? 'md:border-r-2 md:border-blue-600' : ''
+            }`}
+          >
+            <p className="text-blue-600 text-2xl md:text-3xl font-bold">{stat.value}</p>
+            <p className="text-blue-600 text-lg md:text-xl font-semibold text-center">{stat.label}</p>
+          </div>
+        ))}
       </div>
 
-      <div className="w-full p-5 bg-[#F2F2F2] rounded-lg shadow-md mt-5">
-        <div className="flex flex-col md:flex-row md:justify-between lg:justify-between items-center gap-5 my-5">
-          <div>
-            <h1 className="text-xl text-[#962ebf] font-semibold">User Growth</h1>
-          </div>
-          <div className="flex justify-between items-center gap-5 whitespace-nowrap">
-            <div className="relative w-full md:w-32">
-              {/* Selected Year Display */}
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-3 py-2 border border-[#111827] rounded-md flex justify-between items-center bg-white transition"
-              >
-                <span className="text-[#111827]">{selectedYear}</span>
-                <FaChevronDown className="text-[#111827] w-5 h-5 ml-5" />
-              </button>
+      {/* User Growth Section */}
+      <div className="w-full bg-[#F2F2F2] rounded-lg shadow-md p-4 md:p-6">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center mb-6">
+          <h1 className="text-xl text-blue-600 font-semibold">User Growth</h1>
+          <div className="relative w-full md:w-40">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-full px-4 py-2 border border-[#111827] rounded-md flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span className="text-[#111827] text-sm md:text-base">{selectedYear}</span>
+              <FaChevronDown className={`text-[#111827] w-4 h-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
+            </button>
 
-              {/* Dropdown List */}
-              {isOpen && (
-                <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-y-auto shadow-lg text-lg">
+            {isOpen && (
+              <>
+                <div 
+                  className="fixed inset-0 z-20"
+                  onClick={() => setIsOpen(false)}
+                />
+                <div className="absolute z-30 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-y-auto">
                   {years.map((year) => (
                     <div
                       key={year}
                       onClick={() => handleSelect(year)}
-                      className={`p-2 cursor-pointer hover:bg-gray-100 transition ${
-                        year === selectedYear ? "bg-[#111827] text-white" : ""
+                      className={`px-4 py-2 cursor-pointer hover:bg-gray-50 transition-colors text-sm md:text-base ${
+                        year === selectedYear ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
                       }`}
                     >
                       {year}
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </>
+            )}
           </div>
         </div>
-        <TotalView />
+        <div className="h-64 md:h-80">
+          <TotalView />
+        </div>
       </div>
-      <div className="mt-5">
-        <h1 className="text-2xl text-[#962ebf] font-bold mb-5">Recent Joined User</h1>
-        <RecentUsers />
+      {/* Recent Users Section */}
+      <div className="w-full">
+        <h1 className="text-xl md:text-2xl text-blue-600 font-bold mb-4">Recent Joined Users</h1>
+        <div className="bg-white rounded-lg shadow overflow-hidden">
+          <RecentUsers />
+        </div>
       </div>
     </div>
   );

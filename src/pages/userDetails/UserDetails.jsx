@@ -185,7 +185,7 @@ function UserDetails() {
 
   return (
     <div>
-      <div className="bg-[#962ebf] px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap md:flex-nowrap items-start md:items-center gap-2 md:gap-3">
+      <div className="bg-blue-600 px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap md:flex-nowrap items-start md:items-center gap-2 md:gap-3">
         <button
           onClick={() => navigate(-1)}
           className="text-white hover:opacity-90 transition"
@@ -234,10 +234,11 @@ function UserDetails() {
               colorPrimary: "#111827",
             },
             Table: {
-              headerBg: "#962ebf",
-              headerColor: "rgb(255,255,255)",
+              headerBg: "blue-600",
+              headerColor: "#000000", // Changed to black
               cellFontSize: 16,
-              headerSplitColor: "#962ebf",
+              headerSplitColor: "blue-600",
+              colorTextHeading: "#000000", // Ensure header text is black
             },
           },
         }}
@@ -319,19 +320,19 @@ function UserDetails() {
               {/* Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-gray-600 text-sm">Email</div>
+                  <div className="text-black text-sm">Email</div>
                   <div className="text-lg font-semibold">
                     {selectedUser.email}
                   </div>
                 </div>
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-gray-600 text-sm">Phone No</div>
+                  <div className="text-black text-sm">Phone No</div>
                   <div className="text-lg font-semibold">
                     {selectedUser.phone}
                   </div>
                 </div>
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-gray-600 text-sm">Joined Date</div>
+                  <div className="text-black text-sm">Joined Date</div>
                   <div className="text-lg font-semibold">
                     {selectedUser.joined}
                   </div>

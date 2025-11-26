@@ -141,7 +141,7 @@ export default function PaymentManagement() {
 
     return (
         <div className="p-5">
-            <div className="bg-[#962ebf] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
+            <div className="bg-blue-600 px-5 py-3 rounded-md mb-3 flex items-center gap-3">
                 <button
                     onClick={() => navigate(-1)}
                     className="text-white hover:opacity-90 transition"
@@ -160,7 +160,7 @@ export default function PaymentManagement() {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search payments..."
-                                className="bg-white border border-gray-300 text-gray-900 pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#962ebf] w-full md:w-64"
+                                className="bg-white border border-gray-300 text-gray-900 pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 w-full md:w-64"
                             />
                             <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                         </div>
@@ -169,13 +169,13 @@ export default function PaymentManagement() {
                             theme={{
                                 components: {
                                     Select: {
-                                        colorPrimary: "#962ebf",
-                                        colorPrimaryHover: "#7d2599",
+                                        colorPrimary: "blue-600",
+                                        colorPrimaryHover: "blue-600",
                                         colorBorder: "#d1d5db",
                                         borderRadius: 6,
                                         colorText: "#111827",
-                                        optionSelectedBg: "rgb(114,46,209)",
-                                        selectorBg: "rgb(114,46,209)",
+                                        optionSelectedBg: "blue-600",
+                                        selectorBg: "blue-600",
                                     },
                                 },
                             }}
@@ -209,10 +209,11 @@ export default function PaymentManagement() {
                                 borderColor: "#e5e7eb",
                                 headerSplitColor: "#e5e7eb",
                                 rowHoverBg: "#f9f5ff",
+                                headerFontWeight: 800,
                             },
                             Pagination: {
-                                colorPrimary: "#962ebf",
-                                colorPrimaryHover: "#7d2599",
+                                colorPrimary: "blue-600",
+                                colorPrimaryHover: "blue-600",
                             },
                         },
                     }}

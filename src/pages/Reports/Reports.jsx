@@ -183,7 +183,7 @@ function Reports() {
 
   return (
     <div>
-      <div className="bg-[#962ebf] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
+      <div className="bg-[#2563eb] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
           className="text-white hover:opacity-90 transition"
@@ -201,18 +201,18 @@ function Reports() {
               activeBorderColor: "#6BB43A",
             },
             Pagination: {
-              colorPrimaryBorder: "#962ebf",
-              colorBorder: "#962ebf",
-              colorPrimaryHover: "#962ebf",
-              colorTextPlaceholder: "#962ebf",
-              itemActiveBgDisabled: "#962ebf",
-              colorPrimary: "#962ebf",
+              colorPrimaryBorder: "#2563eb",
+              colorBorder: "#2563eb",
+              colorPrimaryHover: "#2563eb",
+              colorTextPlaceholder: "#2563eb",
+              itemActiveBgDisabled: "#2563eb",
+              colorPrimary: "#2563eb",
             },
             Table: {
-              headerBg: "#962ebf",
-              headerColor: "rgb(255,255,255)",
+              headerBg: "white",
+              headerColor: "black",
               cellFontSize: 16,
-              headerSplitColor: "#962ebf",
+              headerSplitColor: "white",
             },
           },
         }}
@@ -260,7 +260,7 @@ function Reports() {
           {selectedUser && (
             <div className="relative">
               {/* Header with gradient background */}
-              <div className="bg-gradient-to-r from-[#962ebf] to-[#962ebf] p-6 -m-6 mb-6 rounded-t-lg">
+              <div className="bg-gradient-to-r from-[#2563eb] to-[#2563eb] p-6 -m-6 mb-6 rounded-t-lg">
                 <div className="flex items-center gap-6">
                   <div className="relative">
                     <img

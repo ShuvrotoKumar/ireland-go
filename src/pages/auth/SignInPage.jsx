@@ -25,19 +25,19 @@ function SignInPage() {
             </div>
             <form className="space-y-5">
               <div className="w-full">
-                <label className="text-xl text-[#962ebf] mb-2 font-bold">
+                <label className="text-xl text-blue-600 mb-2 font-bold">
                   Email
                 </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="enter your gmail"
-                  className="w-full px-5 py-3 border-2 border-[#962ebf] rounded-md outline-none mt-5 placeholder:text-xl"
+                  className="w-full px-5 py-3 border-2 border-blue-600 rounded-md outline-none mt-5 placeholder:text-xl"
                   required
                 />
               </div>
               <div className="w-full">
-                <label className="text-xl text-[#962ebf] mb-2 font-bold">
+                <label className="text-xl text-blue-600 mb-2 font-bold">
                   Password
                 </label>
                 <div className="w-full relative">
@@ -45,13 +45,13 @@ function SignInPage() {
                     type={showPassword ? "text" : "password"}
                     name="password"
                     placeholder="**********"
-                    className="w-full border-2 border-[#962ebf] rounded-md outline-none px-5 py-3 mt-5 placeholder:text-xl"
+                    className="w-full border-2 border-blue-600 rounded-md outline-none px-5 py-3 mt-5 placeholder:text-xl"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 bottom-4 flex items-center text-[#962ebf]"
+                    className="absolute right-3 bottom-4 flex items-center text-blue-600"
                   >
                     {showPassword ? (
                       <IoEyeOffOutline className="w-5 h-5" />
@@ -85,7 +85,7 @@ function SignInPage() {
                           width="21"
                           height="21"
                           rx="4"
-                          className="fill-[#962ebf]"
+                          className="fill-blue-600"
                           stroke="#962ebf"
                         ></rect>
                         <path
@@ -130,7 +130,7 @@ function SignInPage() {
                 <button
                   onClick={() => navigate("/")}
                   type="button"
-                  className="w-1/3 bg-[#962ebf] text-white font-bold py-3 rounded-lg shadow-lg cursor-pointer mt-5"
+                  className="w-1/3 bg-blue-600 text-white font-bold py-3 rounded-lg shadow-lg cursor-pointer mt-5"
                 >
                   Log In
                 </button>

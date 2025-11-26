@@ -7,7 +7,7 @@ export default function Settings() {
       {/* Card */}
       <div className="bg-white rounded-md shadow border border-gray-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-[#962ebf] px-5 py-3">
+        <div className="bg-blue-600 px-5 py-3">
           <h1 className="text-white text-2xl font-bold">Settings</h1>
         </div>
 

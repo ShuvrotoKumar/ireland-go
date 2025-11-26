@@ -17,10 +17,17 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const isActive = (path) => currentPath === path;
+  
+  // Close sidebar when a link is clicked on mobile
+  const handleLinkClick = () => {
+    if (window.innerWidth < 1024) {
+      toggleSidebar();
+    }
+  };
 
   return (
     <div
-      className={`bg-[#fff] text-[#962ebf] border border-[#E5E7EB] h-screen overflow-y-auto py-5 md:py-0 z-50 transition-transform shadow-lg my-5 rounded-lg shadow-[0_0_10px_0_rgba(0,0,0,0.1)]
+      className={`bg-[#fff] text-blue-600 border border-[#E5E7EB] h-screen overflow-y-auto py-5 md:py-0 z-50 transition-transform shadow-lg my-5 rounded-lg shadow-[0_0_10px_0_rgba(0,0,0,0.1)]
         w-[80%] sm:w-[70%] md:w-[60%] lg:w-70 xl:w-72
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
         fixed top-0 left-0
@@ -30,7 +37,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       {/* Close Button (Mobile Only) */}
       <button
         onClick={toggleSidebar}
-        className="absolute top-4 right-4 lg:hidden text-white bg-[#962ebf] focus:outline-none p-2 rounded-full"
+        className="absolute top-4 right-4 lg:hidden text-white bg-blue-600 focus:outline-none p-2 rounded-full"
       >
         <IoCloseSharp />
       </button>
@@ -43,12 +50,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       {/* Sidebar Menu */}
       <ul className="mt-10 px-5 text-[10px]">
         {/* Dashboard Page */}
-        <Link to="/">
+        <Link to="/" onClick={handleLinkClick}>
           <li
             className={`flex items-center gap-2 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
-                : ""
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
             <RxDashboard className="w-5 h-5" />
@@ -56,12 +63,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
         </Link>
         {/* User Management */}
-        <Link to="/user-details">
+        <Link to="/user-details" onClick={handleLinkClick}>
           <li
-            className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/user-details")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
-                : ""
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
             <LuUsers className="w-5 h-5" />
@@ -73,12 +80,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
        
       
         {/* Lab Management */}
-        <Link to="/payment-management">
+        <Link to="/payment-management" onClick={handleLinkClick}>
           <li
-            className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/payment-management")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
-                : ""
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
             <RiFlaskLine className="w-5 h-5" />
@@ -90,7 +97,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <li
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/create-admin")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
                 : ""
             }`}
           >
@@ -104,7 +111,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <li
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/reports")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
                 : ""
             }`}
           >
@@ -116,7 +123,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <li
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/settings")
-                ? "bg-[#962ebf] text-white px-3 py-3 rounded-lg"
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
                 : ""
             }`}
           >
@@ -127,9 +134,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       </ul>
 
       {/* Logout Button */}
-      <div className="absolute mt-8 md:mt-20 mmd:mt-20 w-full px-5 text-[#962ebf]">
+      <div className="absolute mt-8 md:mt-20 mmd:mt-20 w-full px-5 text-blue-600">
         <Link to="/sign-in">
-          <button className="flex items-center gap-4 w-full py-3 rounded-lg bg-[#962ebf]  px-3 duration-200 text-white justify-center ">
+          <button className="flex items-center gap-4 w-full py-3 rounded-lg bg-blue-600  px-3 duration-200 text-white justify-center ">
             <IoLogOutOutline className="w-5 h-5 font-bold" />
             <span>Logout</span>
           </button>

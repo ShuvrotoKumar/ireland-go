@@ -15,7 +15,7 @@ const MainHeader = ({ toggleSidebar }) => {
             aria-label="Toggle sidebar"
             className="p-2 rounded hover:opacity-80 focus:outline-none"
           >
-            <IoMenu className="w-8 h-8 text-[#962ebf]" />
+            <IoMenu className="w-8 h-8 text-blue-600" />
           </button>
           <div className="flex items-center gap-3">
             {/* Notification */}
@@ -23,10 +23,10 @@ const MainHeader = ({ toggleSidebar }) => {
               type="button"
               aria-label="Notifications"
               onClick={() => navigate('/notifications')}
-              className="relative p-2 rounded-full border border-[#962ebf] hover:bg-white/60 transition"
+              className="relative p-2 rounded-full border border-blue-600 hover:bg-white/60 transition"
             >
-              <IoNotificationsOutline className="w-6 h-6 text-[#962ebf]" />
-              <span className="absolute -top-0.5 -right-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-[#962ebf] text-white text-[10px] px-1 leading-none">3</span>
+              <IoNotificationsOutline className="w-6 h-6 text-blue-600" />
+              <span className="absolute -top-0.5 -right-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-blue-600 text-white text-[10px] px-1 leading-none">3</span>
             </button>
             {/* Chat */}
 
@@ -40,10 +40,10 @@ const MainHeader = ({ toggleSidebar }) => {
                 alt="User Avatar"
               />
               <div>
-                <h3 className="hidden md:block text-[#962ebf] text-lg font-semibold">
+                <h3 className="hidden md:block text-blue-600 text-lg font-semibold">
                   Mr. Admin
                 </h3>
-                <p className="text-[#962ebf] text-lg font-semibold">Admin</p>
+                <p className="text-blue-600 text-lg font-semibold">Admin</p>
               </div>
             </div>
           </div>

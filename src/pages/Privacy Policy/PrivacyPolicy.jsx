@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="p-5">
-      <div className="bg-[#962ebf] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
+      <div className="bg-blue-600 px-5 py-3 rounded-md mb-3 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
           className="text-white hover:opacity-90 transition"
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
       <div className="text-center py-5 w-full">
         <button
           onClick={() => console.log(content)}
-          className="bg-[#962ebf] text-white font-semibold w-full py-2 rounded transition duration-200"
+          className="bg-blue-600 text-white font-semibold w-full py-2 rounded transition duration-200"
         >
           Save changes
         </button>
