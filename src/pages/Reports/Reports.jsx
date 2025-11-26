@@ -397,7 +397,7 @@ function Reports() {
               <div className="flex justify-end items-center mt-8 pt-6 border-t border-gray-200">
                 <button
                   onClick={handleViewCancel}
-                  className="bg-gray-500 text-white font-semibold px-8 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                  className="bg-blue-600 text-white font-semibold px-8 py-2 rounded-lg hover:bg-gray-600 transition-colors"
                 >
                   Close
                 </button>
