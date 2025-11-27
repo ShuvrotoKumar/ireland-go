@@ -166,10 +166,10 @@ function Reports() {
       render: (_, record) => (
         <div className="flex gap-2">
 <button className="" onClick={() => showViewModal(record)}>
-            <FaRegEye className="text-[#111827] w-10 h-10 cursor-pointer rounded-md" />
+            <FaRegEye className="text-[#111827] w-5 h-5 cursor-pointer rounded-md" />
           </button>
           <button className="" onClick={() => showModal(record)}>
-            <RiDeleteBin6Line className="text-red-500 w-10 h-10 cursor-pointer rounded-md" />
+            <RiDeleteBin6Line className="text-red-500 w-5 h-5 cursor-pointer rounded-md" />
           </button>
         </div>
       ),

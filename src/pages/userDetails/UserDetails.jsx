@@ -3,8 +3,8 @@ import { useMemo, useState } from "react";
 import { IoSearch, IoChevronBack, IoAddOutline } from "react-icons/io5";
 import { MdBlock } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { FaRegEye } from "react-icons/fa";
-
+import { FiTrash2 } from "react-icons/fi";
+import { FiEdit2 } from 'react-icons/fi';
 function UserDetails() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false); // block modal
@@ -150,12 +150,13 @@ function UserDetails() {
       render: (_, record) => (
         <div className="flex gap-2">
           <button className="" onClick={() => openBlock(record)}>
-            <MdBlock className="text-red-500 w-10 h-10 cursor-pointer rounded-md" />
+            <MdBlock className="h-5 w-5 text-red-600 cursor-pointer rounded-md" />
           </button>
           <button className="" onClick={() => showViewModal(record)}>
-            <FaRegEye className="text-[#111827] w-10 h-10 cursor-pointer rounded-md" />
+            <FiEdit2 className="text-blue-600 w-5 h-5 cursor-pointer rounded-md" />
           </button>
         </div>
+        
       ),
     },
   ];

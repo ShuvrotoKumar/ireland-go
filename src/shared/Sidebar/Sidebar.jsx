@@ -12,6 +12,8 @@ import {
   MdOutlineInventory2,
 } from "react-icons/md";
 import { RiFlaskLine } from "react-icons/ri";
+import { BsReceipt, BsCurrencyDollar, BsBookmarkCheck, BsGrid1X2, BsTruck, BsBox } from "react-icons/bs";
+import { BiCategory } from "react-icons/bi";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -44,7 +46,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
       {/* Logo */}
       <div className="flex justify-center items-center gap-2 px-5 mt-20">
-        <img src="/logo.png" className="w-[150px] h-[80px]" alt="User Avatar" />
+        <img src="/logo.png" className="w-[120px] h-[50px]" alt="User Avatar" />
       </div>
 
       {/* Sidebar Menu */}
@@ -75,12 +77,79 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <p className="text-lg font-semibold">All Users</p>
           </li>
         </Link>
-       
 
-       
-      
+        {/* Earnings */}
+        <Link to="/earnings" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/earnings")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BsCurrencyDollar className="w-5 h-5" />
+            <p className="text-lg font-semibold">Earnings</p>
+          </li>
+        </Link>
+
+        {/* Bookings */}
+        <Link to="/bookings" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/bookings")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BsBookmarkCheck className="w-5 h-5" />
+            <p className="text-lg font-semibold">Bookings</p>
+          </li>
+        </Link>
+
+        {/* Categories */}
+        <Link to="/categories" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/categories")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BiCategory className="w-5 h-5" />
+            <p className="text-lg font-semibold">Categories</p>
+          </li>
+        </Link>
+
+        {/* Vehicles */}
+        <Link to="/vehicles" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/vehicles")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BsTruck className="w-5 h-5" />
+            <p className="text-lg font-semibold">Vehicles</p>
+          </li>
+        </Link>
+
+        {/* Contents */}
+        <Link to="/contents" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/contents")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BsBox className="w-5 h-5" />
+            <p className="text-lg font-semibold">Contents</p>
+          </li>
+        </Link>
+
         {/* Lab Management */}
-        <Link to="/payment-management" onClick={handleLinkClick}>
+        {/* <Link to="/payment-management" onClick={handleLinkClick}>
           <li
             className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/payment-management")
@@ -91,14 +160,29 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <RiFlaskLine className="w-5 h-5" />
             <p className="text-lg font-semibold whitespace-nowrap">Payments</p>
           </li>
-        </Link>
+        </Link> */}
 
+        {/* Invoices */}
+        {/* <Link to="/invoices" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/invoices")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BsReceipt className="w-5 h-5" />
+            <p className="text-lg font-semibold">Invoices</p>
+          </li>
+        </Link> */}
+        
+        {/* Create Admin */}
         <Link to="/create-admin">
           <li
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/create-admin")
                 ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
-                : ""
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
             <MdAdminPanelSettings className="w-5 h-5" />
@@ -112,10 +196,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/reports")
                 ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
-                : ""
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
-            <TbReport className="w-5 h-5 text-lg font-semibold" />
+            <TbReport className="w-5 h-5" />
             <p className="text-lg font-semibold">Reports</p>
           </li>
         </Link>
@@ -124,7 +208,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             className={`flex items-center gap-2 mt-5 cursor-pointer transition-all duration-300 ease-in-out ${
               isActive("/settings")
                 ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
-                : ""
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
             <IoMdSettings className="w-5 h-5 text-lg font-semibold" />

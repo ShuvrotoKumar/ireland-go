@@ -9,7 +9,6 @@ import PrivacyPolicy from "../pages/Privacy Policy/PrivacyPolicy";
 import TermsCondition from "../pages/Terms Condition/TermsCondition";
 import UserDetails from "../pages/userDetails/UserDetails";
 import CreateUser from "../pages/userDetails/CreateUser";
-import Notifications from "../pages/Notifications/Notifications";
 import ProfilePage from "../pages/profile/ProfilePage";
 import Reports from "../pages/Reports/Reports";
 import Settings from "../pages/Settings/Settings";
@@ -18,7 +17,11 @@ import AboutUs from "../pages/optional/AboutUs";
 import EditProfile from "../pages/profile/EditProfile";
 import CreateAdmin from "../pages/Create Admin/CreateAdmin";
 import AddAdmin from "../pages/Add Admin/AddAdmin";
-import PaymentManagement from "../pages/paymentManagement/PaymentManagement";
+import Vehicles from "../pages/Vehicles/Vehicles";
+import Bookings from "../pages/Bookings/Bookings";
+import Categories from "../pages/Categories/Categories";
+import Contents from "../pages/Contents/Contents";
+import Earnings from "../pages/Earnings/earnings";
 
 const router = createBrowserRouter([
   {
@@ -51,14 +54,8 @@ const router = createBrowserRouter([
         element: <UserDetails />,
       },
 
-      {
-        path: "/payment-management",
-        element: <PaymentManagement />,
-      },
-      {
-        path: "/notifications",
-        element: <Notifications />,
-      },
+    
+     
       {
         path: "/create-user",
         element: <CreateUser />,
@@ -105,6 +102,26 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage />,
       },
+      {
+        path:"/vehicles",
+        element:<Vehicles/>
+      },
+      {
+        path:"/bookings",
+        element:<Bookings/>
+      },
+      {
+        path:"/categories",
+        element:<Categories/>
+      },
+      {
+        path:"/contents",
+        element:<Contents/>
+      },
+      {
+        path:"/earnings",
+        element:<Earnings/>
+      },  
     ],
   },
 ]);
