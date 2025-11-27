@@ -21,7 +21,7 @@ import Vehicles from "../pages/Vehicles/Vehicles";
 import Bookings from "../pages/Bookings/Bookings";
 import Categories from "../pages/Categories/Categories";
 import Contents from "../pages/Contents/Contents";
-import Earnings from "../pages/Earnings/earnings";
+import Earnings from "../pages/Earnings/Earnings";
 
 const router = createBrowserRouter([
   {
@@ -119,7 +119,7 @@ const router = createBrowserRouter([
         element:<Contents/>
       },
       {
-        path:"/earnings",
+        path:"/Earnings",
         element:<Earnings/>
       },  
     ],
