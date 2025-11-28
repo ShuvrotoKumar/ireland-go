@@ -22,6 +22,7 @@ import Bookings from "../pages/Bookings/Bookings";
 import Categories from "../pages/Categories/Categories";
 import Contents from "../pages/Contents/Contents";
 import Earnings from "../pages/Earnings/Earnings";
+import Notifications from "../pages/Notifications/Notifications";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: "/add-admin",
         element: <AddAdmin />,
+      },
+      {
+        path: "/notifications",
+        element: <Notifications />,
       },
       {
         path: "/profile",
