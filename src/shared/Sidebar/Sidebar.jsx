@@ -12,7 +12,7 @@ import {
   MdOutlineInventory2,
 } from "react-icons/md";
 import { RiFlaskLine } from "react-icons/ri";
-import { BsReceipt, BsCurrencyDollar, BsBookmarkCheck, BsGrid1X2, BsTruck, BsBox } from "react-icons/bs";
+import { BsReceipt, BsCurrencyDollar, BsBookmarkCheck, BsGrid1X2, BsTruck, BsBox, BsCreditCard } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
       {/* Logo */}
       <div className="flex justify-center items-center gap-2 px-5 mt-20">
-        <img src="/logo.png" className="w-[120px] h-[50px]" alt="User Avatar" />
+        <img src="/logo.png" className="w-[120px] h-[100px]" alt="User Avatar" />
       </div>
 
       {/* Sidebar Menu */}
@@ -92,20 +92,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
         </Link>
 
-        {/* Bookings */}
-        <Link to="/bookings" onClick={handleLinkClick}>
+        {/* Subscriptions */}
+        <Link to="/subscriptions" onClick={handleLinkClick}>
           <li
             className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/bookings")
+              isActive("/subscriptions")
                 ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
                 : "hover:bg-gray-100 px-3 py-3 rounded-lg"
             }`}
           >
-            <BsBookmarkCheck className="w-5 h-5" />
-            <p className="text-lg font-semibold">Bookings</p>
+            <BsCreditCard className="w-5 h-5" />
+            <p className="text-lg font-semibold">Subscriptions</p>
           </li>
         </Link>
 
+        
         {/* Categories */}
         <Link to="/categories" onClick={handleLinkClick}>
           <li
@@ -120,33 +121,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
         </Link>
 
-        {/* Vehicles */}
-        <Link to="/vehicles" onClick={handleLinkClick}>
-          <li
-            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/vehicles")
-                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
-                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
-            }`}
-          >
-            <BsTruck className="w-5 h-5" />
-            <p className="text-lg font-semibold">Vehicles</p>
-          </li>
-        </Link>
-
-        {/* Contents */}
-        <Link to="/contents" onClick={handleLinkClick}>
-          <li
-            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/contents")
-                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
-                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
-            }`}
-          >
-            <BsBox className="w-5 h-5" />
-            <p className="text-lg font-semibold">Contents</p>
-          </li>
-        </Link>
 
         {/* Lab Management */}
         {/* <Link to="/payment-management" onClick={handleLinkClick}>
@@ -176,6 +150,20 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
         </Link> */}
         
+         <Link to="/chat" onClick={handleLinkClick}>
+          <li
+            className={`flex items-center gap-2 mt-2 cursor-pointer transition-all duration-300 ease-in-out ${
+              isActive("/chat")
+                ? "bg-blue-600 text-white px-3 py-3 rounded-lg"
+                : "hover:bg-gray-100 px-3 py-3 rounded-lg"
+            }`}
+          >
+            <BiCategory className="w-5 h-5" />
+            <p className="text-lg font-semibold">Chat</p>
+          </li>
+        </Link>
+
+
         {/* Create Admin */}
         <Link to="/create-admin">
           <li

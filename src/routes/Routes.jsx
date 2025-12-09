@@ -16,13 +16,12 @@ import ChangePass from "../pages/profile/ChangePass";
 import AboutUs from "../pages/optional/AboutUs";
 import EditProfile from "../pages/profile/EditProfile";
 import CreateAdmin from "../pages/Create Admin/CreateAdmin";
-import AddAdmin from "../pages/Add Admin/AddAdmin";
-import Vehicles from "../pages/Vehicles/Vehicles";
-import Bookings from "../pages/Bookings/Bookings";
+import AddAdmin from "../pages/Add Admin/AddAdmin"
 import Categories from "../pages/Categories/Categories";
-import Contents from "../pages/Contents/Contents";
 import Earnings from "../pages/Earnings/Earnings";
 import Notifications from "../pages/Notifications/Notifications";
+import Subscriptions from "../pages/subscriptions/Subscriptions";
+import Chat from "../pages/chat/Chat";
 
 const router = createBrowserRouter([
   {
@@ -100,6 +99,10 @@ const router = createBrowserRouter([
         element: <AddAdmin />,
       },
       {
+        path: "/chat",
+        element: <Chat />,
+      },
+      {
         path: "/notifications",
         element: <Notifications />,
       },
@@ -107,26 +110,23 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage />,
       },
-      {
-        path:"/vehicles",
-        element:<Vehicles/>
-      },
-      {
-        path:"/bookings",
-        element:<Bookings/>
-      },
+  
       {
         path:"/categories",
         element:<Categories/>
       },
       {
-        path:"/contents",
-        element:<Contents/>
-      },
-      {
-        path:"/Earnings",
+        path:"/earnings",
         element:<Earnings/>
-      },  
+      }, 
+      {
+        path:"/subscriptions",
+        element:<Subscriptions/>
+      }, 
+      // {
+      //   path:"/chat",
+      //   element:<Chat/>
+      // },
     ],
   },
 ]);

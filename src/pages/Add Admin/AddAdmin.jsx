@@ -35,10 +35,10 @@ export default function AddAdmin() {
   return (
     <div className="p-5">
       {/* Header */}
-      <div className="bg-[#962ebf] text-[white] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
+      <div className="bg-blue-600 text-[white] px-5 py-3 rounded-md mb-3 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="text-[#962ebf] hover:opacity-90 transition"
+          className="text-white hover:opacity-90 transition"
           aria-label="Go back"
         >
           <IoChevronBack className="w-6 h-6" />
@@ -50,7 +50,7 @@ export default function AddAdmin() {
       <form onSubmit={handleSubmit} className="bg-white rounded-md shadow border border-gray-200 p-5 mb-5">
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-[#962ebf] mb-1">Name</label>
+            <label className="block text-sm font-semibold text-blue-600 mb-1">Name</label>
             <input
               type="text"
               value={form.name}
@@ -61,7 +61,7 @@ export default function AddAdmin() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-[#962ebf] mb-1">Email</label>
+            <label className="block text-sm font-semibold text-blue-600 mb-1">Email</label>
             <input
               type="email"
               value={form.email}
@@ -73,7 +73,7 @@ export default function AddAdmin() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-[#962ebf] mb-1">New Password</label>
+              <label className="block text-sm font-semibold text-blue-600 mb-1">New Password</label>
               <div className="relative">
                 <input
                   type={showPass.new ? "text" : "password"}
@@ -92,7 +92,7 @@ export default function AddAdmin() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-[#962ebf] mb-1">Confirm New Password</label>
+              <label className="block text-sm font-semibold text-blue-600 mb-1">Confirm New Password</label>
               <div className="relative">
                 <input
                   type={showPass.confirm ? "text" : "password"}
@@ -113,7 +113,7 @@ export default function AddAdmin() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-[#962ebf] mb-1">Profile Image</label>
+            <label className="block text-sm font-semibold text-blue-600 mb-1">Profile Image</label>
             <div
               className="w-full border border-gray-300 rounded-md px-4 py-8 flex flex-col items-center justify-center text-gray-500 bg-gray-50"
               onClick={() => fileInputRef.current?.click()}
@@ -132,7 +132,7 @@ export default function AddAdmin() {
           </div>
 
           <div className="pt-2">
-            <button type="submit" className="w-full bg-[#962ebf] text-white font-semibold py-3 rounded-md">
+            <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md">
               Create Admin
             </button>
           </div>
